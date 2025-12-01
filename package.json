@@ -1,0 +1,32 @@
+{
+  "name": "a-css-helper",
+  "displayName": "A-CSS Helper",
+  "description": "提供 a-* CSS 工具类的中文提示自动补全。",
+  "version": "0.0.1",
+  "publisher": "your-name",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onLanguage:javascript", "onLanguage:typescript", "onLanguage:html","onLanguage:vue"],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "A-CSS Helper Settings",
+      "properties": {
+        "a-css-helper.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "开启/关闭 A-CSS 中文提示补全"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "vsce": "^2.15.0"
+  }
+}
