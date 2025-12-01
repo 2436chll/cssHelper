@@ -3,7 +3,7 @@
   "displayName": "A-CSS Helper",
   "description": "提供 a-* CSS 工具类的中文提示自动补全。",
   "version": "0.0.1",
-  "publisher": "your-name",
+  "publisher": "luckyLi",
   "engines": {
     "vscode": "^1.85.0"
   },
