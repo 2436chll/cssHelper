@@ -31,7 +31,7 @@ function activate(context) {
           const completion = new vscode.CompletionItem(`${paddedLabel}${item.detail}`, vscode.CompletionItemKind.Keyword);
           completion.range = replaceRange;
           completion.insertText = new vscode.SnippetString(item.insertText || item.label);
-          completion.detail = item.detail; // 右侧小提示
+          // completion.detail = item.detail; // 右侧小提示,在没选中的时候不显示，选中才显示，不好用
 
           const formattedStyle = item.style
             .split(';')          // 按分号分割
@@ -40,7 +40,7 @@ function activate(context) {
             .join(';\n');        // 用分号+换行重新拼接
 
           completion.documentation = new vscode.MarkdownString(
-            `${item.explain ? `**说明**:\n${item.explain}\n\n**CSS**:\n` : ''}\`\`\`css\n${formattedStyle};\n\`\`\``
+            `**${item.detail}**\n${item.explain ? `**说明**:\n${item.explain}\n**CSS**:\n` : ''}\`\`\`css\n${formattedStyle};\n\`\`\``
           );
           return completion;
         });
@@ -69,7 +69,7 @@ function activate(context) {
 
           return new vscode.Hover(
             new vscode.MarkdownString(
-            `**${item.detail}**\n${item.explain ? `**说明**:\n${item.explain}\n\n**CSS**:\n` : ''}\`\`\`css\n${formattedStyle};\n\`\`\``
+            `**${item.detail}**\n${item.explain ? `**说明**:\n${item.explain}\n**CSS**:\n` : ''}\`\`\`css\n${formattedStyle};\n\`\`\``
             ),
             range // 指定 hover 范围
           );
