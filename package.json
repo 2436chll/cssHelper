@@ -1,24 +1,36 @@
 {
-  "name": "a-css-helper",
-  "displayName": "A-CSS Helper",
-  "description": "提供 a-* CSS 工具类的中文提示自动补全。",
-  "version": "0.0.1",
+  "name": "auto-completion-suggestion",
+  "displayName": "auto-completion-suggestion",
+  "description": "提供常用中文提示自动补全。",
+  "version": "0.0.2",
   "publisher": "luckyLi",
   "engines": {
     "vscode": "^1.85.0"
   },
-  "categories": ["Other"],
-  "activationEvents": ["onLanguage:javascript", "onLanguage:typescript", "onLanguage:html","onLanguage:vue"],
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:typescript",
+    "onLanguage:html",
+    "onLanguage:vue"
+  ],
   "main": "./extension.js",
   "contributes": {
     "configuration": {
       "type": "object",
-      "title": "A-CSS Helper Settings",
+      "title": "auto-completion-suggestion",
       "properties": {
-        "a-css-helper.enable": {
+        "auto-completion-suggestion.aapaas-theme.enable": {
           "type": "boolean",
           "default": true,
-          "description": "开启/关闭 A-CSS 中文提示补全"
+          "description": "开启/关闭 aapaas样式属性 中文提示补全"
+        },
+        "auto-completion-suggestion.a-css-helper.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "开启/关闭 a-css class 中文提示补全"
         }
       }
     }
